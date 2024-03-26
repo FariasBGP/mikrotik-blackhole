@@ -1,0 +1,7 @@
+Copie os arquivos rsc para seu mikrotik e execute. 
+A ideia é caputurar todos ips que fazem brutefoce e adiciona-los a lista ATAQUE. 
+Um script irá ler essa lista e adicionar os IPs a blackhole. Esses IPs você pode enviar para seu BGP de BORDA e matar ali mesmo.
+
+Basta fechar um peering com seu router de Borda, ele irá receber esses ips que você deve configurar para nexthop 192.0.2.1.
+
+/routing bgp peer add name=BORDA remote-address=IP-ROUTER-BORDA remote-as=AS-ROUTER-BORDA update-source=IP-MIKROTIK
